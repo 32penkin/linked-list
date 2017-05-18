@@ -93,6 +93,75 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('#getHead', () => {
+    let ll = new LinkedList();
+    let node1 = new Node('node1');
+    let node2 = new Node('node2');
+
+    ll.push(node1);
+    ll.push(node2);
+
+    it('check the head of the list', () => {
+      expect(ll.getHead()).to.equal(node1);
+    });
+  });
+
+  describe('#isEmpty', () => {
+    let ll = new LinkedList();
+    let ll2 = new LinkedList();
+    let node1 = new Node('node1');
+
+    ll.push(node1);
+
+    it('check is empty the list', () => {
+      expect(ll.isEmpty()).to.equal(false);
+    });
+
+    it('check is empty the list', () => {
+      expect(ll2.isEmpty()).to.equal(true);
+    });
+  });
+
+  describe('#clear', () => {
+    let ll = new LinkedList();
+    let node1 = new Node('node1');
+    ll.push(node1);
+    ll.clear();
+
+    it('check list after clearing', () => {
+      expect(ll.getHead()).to.equal(null);
+    });
+
+    it('check list after clearing', () => {
+      expect(ll2.length).to.equal(0);
+    });
+  });
+
+  describe('#size', () => {
+    let ll = new LinkedList();
+    let ll2 = new LinkedList();
+    let ll3 = new LinkedList();
+    let node1 = new Node('node1');
+    let node2 = new Node('node2');
+    let node3 = new Node('node3');
+
+    ll.push(node1);
+    ll.push(node2);
+    ll.push(node3);
+    ll2.push(node1);
+    ll2.push(node3);
+
+    it('check size of list', () => {
+      expect(ll.size()).to.equal(3);
+    });
+    it('another check size of list', () => {
+      expect(ll2.size()).to.equal(2);
+    });
+    it('another check size of list', () => {
+      expect(ll3.size()).to.equal(0);
+    });
+  });
+
 
 });
 
