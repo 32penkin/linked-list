@@ -72,6 +72,10 @@ class LinkedList {
     return this.length;
   }
 
+  isRound(head) {
+
+  }
+
   plunk(node, position) { // static ?
     let i = 0;
 

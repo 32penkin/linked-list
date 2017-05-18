@@ -2,7 +2,6 @@ const LinkedList = require('../src/linked-list');
 const Node = require('../src/node');
 
 describe('LinkedList', () => {
-
   describe('#constructor', () => {
     let ll = new LinkedList();
 
@@ -154,9 +153,11 @@ describe('LinkedList', () => {
     it('check size of list', () => {
       expect(ll.size()).to.equal(3);
     });
+
     it('another check size of list', () => {
       expect(ll2.size()).to.equal(2);
     });
+
     it('another check size of list', () => {
       expect(ll3.size()).to.equal(0);
     });
