@@ -23,7 +23,14 @@ class LinkedList {
   }
 
   get(position) {
+    let current = this.head;
+    let i = 0;
 
+    if (position >= this.length) {
+      throw 'The position is outside the list!'
+    }
+    current = this.plunk(current, position);
+    return current;
   }
 
   add(node, position) {
@@ -48,7 +55,14 @@ class LinkedList {
 
   }
 
-
+  plunk(node, position) {
+    let i = 0;
+    while (i < position) {
+      node = node.next;
+      i++;
+    }
+    return node;
+  }
 
 }
 
