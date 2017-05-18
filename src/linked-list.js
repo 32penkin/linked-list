@@ -6,22 +6,6 @@ class LinkedList {
     this.length = 0;
   }
 
-  getHead() {
-
-  }
-
-  isEmpty() {
-
-  }
-
-  clear() {
-
-  }
-
-  size() {
-
-  }
-
   get(position) {
     let current = this.head;
     let i = 0;
@@ -52,6 +36,22 @@ class LinkedList {
   }
 
   remove(position) {
+
+  }
+
+  getHead() {
+
+  }
+
+  isEmpty() {
+
+  }
+
+  clear() {
+
+  }
+
+  size() {
 
   }
 

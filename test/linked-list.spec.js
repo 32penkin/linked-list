@@ -55,6 +55,25 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('#add', () => {
+    let ll = new LinkedList();
+    let node1 = new Node('node1');
+    let node2 = new Node('node2');
+    let node3 = new Node('node3');
+
+    ll.push(node1);
+    ll.push(node2);
+    ll.add(node3, 1);
+
+    it('verify the correctness of inserted node position', () => {
+      expect(ll.get(1)).to.equal(node3);
+    });
+
+    it('check the lenght of the list', () => {
+      expect(ll.length).to.equal(3);
+    });
+  });
+
 
 });
 
