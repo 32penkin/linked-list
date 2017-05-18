@@ -56,22 +56,23 @@ class LinkedList {
   }
 
   getHead() {
-
+    return this.head;
   }
 
   isEmpty() {
-
+    return this.length == 0;
   }
 
   clear() {
-
+    this.head = null;
+    this.length = 0;
   }
 
   size() {
-
+    return this.length;
   }
 
-  plunk(node, position) {
+  plunk(node, position) { // static ?
     let i = 0;
 
     while (i < position) {

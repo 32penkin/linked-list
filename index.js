@@ -14,10 +14,11 @@ ll.push(node3);
 ll2.push(node1);
 ll2.push(node3);
 
-console.log(ll.remove(1));
-// console.log(ll == ll2);
-// console.log('------------------------------------');
-// console.log(ll);
-// console.log(ll2);
+
+console.log(ll);
+ll.clear();
+console.log('------------------------------------');
+console.log(ll);
+
 
 

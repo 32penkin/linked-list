@@ -133,7 +133,7 @@ describe('LinkedList', () => {
     });
 
     it('check list after clearing', () => {
-      expect(ll2.length).to.equal(0);
+      expect(ll.length).to.equal(0);
     });
   });
 
