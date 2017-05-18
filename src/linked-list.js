@@ -8,7 +8,6 @@ class LinkedList {
 
   get(position) {
     let current = this.head;
-    let i = 0;
 
     if (position >= this.length) {
       throw 'The position is outside the list!'
@@ -18,17 +17,17 @@ class LinkedList {
   }
 
   add(node, position) {
-    if(position == 0) {
+    let prev = this.get(position - 1);
+    let curr = prev.next;
+
+    if (position == 0) {
       node.next = this.head;
       this.head = node;
     } else {
-      let prev = this.get(position - 1);
-      let curr = prev.next;
-
       node.next = curr;
       prev.next = node;
     }
-    this.length ++;
+    this.length++;
   }
 
   push(node) {
@@ -67,6 +66,7 @@ class LinkedList {
 
   plunk(node, position) {
     let i = 0;
+
     while (i < position) {
       node = node.next;
       i++;
