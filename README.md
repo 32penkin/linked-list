@@ -3,8 +3,8 @@
  is a linear collection of data elements, called nodes, each pointing to the next node by means of a pointer.
  It is a data structure consisting of a group of nodes which together represent a sequence.
 
- ###Example:
- ####To create a new List:
+ ###  Example:
+ To create a new List:
  ```sh
   const LinkedList = new LinkedList();
   //create nodes for inserting:
