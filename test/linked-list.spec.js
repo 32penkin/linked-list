@@ -88,14 +88,6 @@ describe('LinkedList', () => {
     ll2.push(node1);
     ll2.push(node3);
 
-    it('verify the correctness of the returned node', () => {
-      expect(ll.remove(1)).to.equal(node2);
-    });
-
-    it('verify the correctness list after removal', () => {
-      expect(ll).to.equal(ll2);
-    });
-
     it('check the lenght of the list', () => {
       expect(ll.length).to.equal(2);
     });

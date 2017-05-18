@@ -45,7 +45,14 @@ class LinkedList {
   }
 
   remove(position) {
+    let prev = this.get(position - 1);
 
+    if (position == 0) {
+      this.head = this.head.next;
+    } else {
+      prev.next = prev.next.next;
+    }
+    this.length--;
   }
 
   getHead() {
