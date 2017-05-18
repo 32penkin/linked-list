@@ -1,11 +1,13 @@
+const Node = require('./node');
+
 class LinkedList {
   constructor() {
     this.head = null;
     this.length = 0;
   }
 
-  head() {
-    return this.head;
+  getHead() {
+
   }
 
   isEmpty() {
@@ -28,8 +30,17 @@ class LinkedList {
 
   }
 
-  push(data) {
-
+  push(node) {
+    let current = this.head;
+    if(!this.head) {
+      this.head = node;
+    } else {
+      while(current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.length ++;
   }
 
   remove(position) {
