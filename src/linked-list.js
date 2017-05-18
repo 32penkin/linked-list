@@ -26,26 +26,29 @@ class LinkedList {
 
   }
 
-  add(data, position) {
+  add(node, position) {
 
   }
 
   push(node) {
     let current = this.head;
-    if(!this.head) {
+
+    if (!this.head) {
       this.head = node;
     } else {
-      while(current.next) {
+      while (current.next) {
         current = current.next;
       }
       current.next = node;
     }
-    this.length ++;
+    this.length++;
   }
 
   remove(position) {
 
   }
+
+
 
 }
 

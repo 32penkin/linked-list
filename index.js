@@ -13,6 +13,10 @@ ll.push(node2);
 ll.push(node3);
 
 
-console.log(node3);
+console.log(ll.get(0));
+console.log('----------------------------');
+console.log(ll.get(1));
+console.log('----------------------------');
+console.log(ll.get(2));
 
 

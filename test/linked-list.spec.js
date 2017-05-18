@@ -42,6 +42,19 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('#get', () => {
+    let ll = new LinkedList();
+    let node1 = new Node('node1');
+    let node2 = new Node('node2');
+    ll.push(node1);
+    ll.push(node2);
+
+    it('verify the correctness of the returned node', () => {
+      expect(ll.get(0)).to.equal(node1);
+      expect(ll.get(1)).to.equal(node2);
+    });
+  });
+
 
 });
 
