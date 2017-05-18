@@ -1,0 +1,25 @@
+{
+  "name": "linked-list",
+  "version": "1.0.0",
+  "description": "Linked list implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ./test/setup-mocha.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/32penkin/linked-list.git"
+  },
+  "author": "Yauhen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/32penkin/linked-list/issues"
+  },
+  "homepage": "https://github.com/32penkin/linked-list#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.0.2",
+    "sinon": "1.17.5",
+    "sinon-chai": "2.8.0"
+  }
+}
