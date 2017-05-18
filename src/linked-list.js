@@ -18,7 +18,17 @@ class LinkedList {
   }
 
   add(node, position) {
+    if(position == 0) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      let prev = this.get(position - 1);
+      let curr = prev.next;
 
+      node.next = curr;
+      prev.next = node;
+    }
+    this.length ++;
   }
 
   push(node) {
