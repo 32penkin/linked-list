@@ -169,12 +169,14 @@ describe('LinkedList', () => {
     let node1 = new Node('node1');
     let node2 = new Node('node2');
     let node3 = new Node('node3', node1);
+    let node4 = new Node('node4');
+    let node5 = new Node('node5');
 
     ll.push(node1);
     ll.push(node2);
     ll.push(node3);
-    ll2.push(node1);
-    ll2.push(node2);
+    ll2.push(node4);
+    ll2.push(node5);
 
     it('check if the list is circular', () => {
       expect(ll.isRound(ll.head)).to.equal(true);

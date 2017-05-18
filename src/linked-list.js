@@ -73,7 +73,17 @@ class LinkedList {
   }
 
   isRound(head) {
+    let slower = head;
+    let faster = head.next;
 
+    while(true) {
+      if(!faster || !faster.next) return false;
+      else if(faster == slower || faster.next == slower) return true;
+      else {
+        slower = slower.next;
+        faster = faster.next.next;
+      }
+    }
   }
 
   plunk(node, position) { // static ?
