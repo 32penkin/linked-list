@@ -3,7 +3,7 @@ const Node = require('../src/node');
 
 describe('LinkedList', () => {
   describe('#constructor', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
 
     it('assigns null to this.head', () => {
       expect(ll.head).to.equal(null);
@@ -15,7 +15,7 @@ describe('LinkedList', () => {
   });
 
   describe('#push', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
     let node1 = new Node('node1');
     let node2 = new Node('node2');
     let node3 = new Node('node3');
@@ -42,7 +42,7 @@ describe('LinkedList', () => {
   });
 
   describe('#get', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
     let node1 = new Node('node1');
     let node2 = new Node('node2');
     ll.push(node1);
@@ -55,7 +55,7 @@ describe('LinkedList', () => {
   });
 
   describe('#add', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
     let node1 = new Node('node1');
     let node2 = new Node('node2');
     let node3 = new Node('node3');
@@ -74,8 +74,8 @@ describe('LinkedList', () => {
   });
 
   describe('#remove', () => {
-    let ll = new LinkedList();
-    let ll2 = new LinkedList();
+    const ll = new LinkedList();
+    const ll2 = new LinkedList();
     let node1 = new Node('node1');
     let node2 = new Node('node2');
     let node3 = new Node('node3');
@@ -93,7 +93,7 @@ describe('LinkedList', () => {
   });
 
   describe('#getHead', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
     let node1 = new Node('node1');
     let node2 = new Node('node2');
 
@@ -106,8 +106,8 @@ describe('LinkedList', () => {
   });
 
   describe('#isEmpty', () => {
-    let ll = new LinkedList();
-    let ll2 = new LinkedList();
+    const ll = new LinkedList();
+    const ll2 = new LinkedList();
     let node1 = new Node('node1');
 
     ll.push(node1);
@@ -122,7 +122,7 @@ describe('LinkedList', () => {
   });
 
   describe('#clear', () => {
-    let ll = new LinkedList();
+    const ll = new LinkedList();
     let node1 = new Node('node1');
     ll.push(node1);
     ll.clear();
@@ -137,10 +137,10 @@ describe('LinkedList', () => {
   });
 
   describe('#size', () => {
-    let ll = new LinkedList();
-    let ll2 = new LinkedList();
-    let ll3 = new LinkedList();
-    let node1 = new Node('node1');
+    const ll = new LinkedList();
+    const ll2 = new LinkedList();
+    const ll3 = new LinkedList();
+    const node1 = new Node('node1');
     let node2 = new Node('node2');
     let node3 = new Node('node3');
 
@@ -163,6 +163,27 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('#isRound', () => {
+    const ll = new LinkedList();
+    const ll2 = new LinkedList();
+    let node1 = new Node('node1');
+    let node2 = new Node('node2');
+    let node3 = new Node('node3', node1);
+
+    ll.push(node1);
+    ll.push(node2);
+    ll.push(node3);
+    ll2.push(node1);
+    ll2.push(node2);
+
+    it('check if the list is circular', () => {
+      expect(ll.isRound(ll.head)).to.equal(true);
+    });
+
+    it('check if the list is circular', () => {
+      expect(ll2.isRound(ll2.head)).to.equal(false);
+    });
+  });
 
 });
 
