@@ -16,56 +16,49 @@ describe('LinkedList', () => {
 
   describe('#push', () => {
     const ll = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
-    let node3 = new Node('node3');
 
-    ll.push(node1);
-    ll.push(node2);
-    ll.push(node3);
+    ll.push('node1');
+    ll.push('node2');
+    ll.push('node3');
 
     it('check the lenght of the list', () => {
       expect(ll.length).to.equal(3);
     });
 
     it('check the head of the list', () => {
-      expect(ll.head).to.equal(node1);
+      expect(ll.head.data).to.equal('node1');
     });
 
     it('assigns node1.next to node2', () => {
-      expect(node1.next).to.equal(node2);
+      expect(ll.getHead().next.data).to.equal('node2');
     });
 
     it('assigns node3.next to undefined', () => {
-      expect(node3.next).to.equal(undefined);
+      expect(ll.get(2).next).to.equal(undefined);
     });
   });
 
   describe('#get', () => {
     const ll = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
-    ll.push(node1);
-    ll.push(node2);
+
+    ll.push('node1');
+    ll.push('node2');
 
     it('verify the correctness of the returned node', () => {
-      expect(ll.get(0)).to.equal(node1);
-      expect(ll.get(1)).to.equal(node2);
+      expect(ll.get(0).data).to.equal('node1');
+      expect(ll.get(1).data).to.equal('node2');
     });
   });
 
   describe('#add', () => {
     const ll = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
-    let node3 = new Node('node3');
 
-    ll.push(node1);
-    ll.push(node2);
-    ll.add(node3, 1);
+    ll.push('node1');
+    ll.push('node2');
+    ll.add('node3', 1);
 
     it('verify the correctness of inserted node position', () => {
-      expect(ll.get(1)).to.equal(node3);
+      expect(ll.get(1).data).to.equal('node3');
     });
 
     it('check the lenght of the list', () => {
@@ -75,17 +68,11 @@ describe('LinkedList', () => {
 
   describe('#remove', () => {
     const ll = new LinkedList();
-    const ll2 = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
-    let node3 = new Node('node3');
 
-    ll.push(node1);
-    ll.push(node2);
-    ll.push(node3);
+    ll.push('node1');
+    ll.push('node2');
+    ll.push('node3');
     ll.remove(1);
-    ll2.push(node1);
-    ll2.push(node3);
 
     it('check the lenght of the list', () => {
       expect(ll.length).to.equal(2);
@@ -94,14 +81,12 @@ describe('LinkedList', () => {
 
   describe('#getHead', () => {
     const ll = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
 
-    ll.push(node1);
-    ll.push(node2);
+    ll.push('node1');
+    ll.push('node2');
 
     it('check the head of the list', () => {
-      expect(ll.getHead()).to.equal(node1);
+      expect(ll.getHead().data).to.equal('node1');
     });
   });
 
@@ -140,15 +125,12 @@ describe('LinkedList', () => {
     const ll = new LinkedList();
     const ll2 = new LinkedList();
     const ll3 = new LinkedList();
-    const node1 = new Node('node1');
-    let node2 = new Node('node2');
-    let node3 = new Node('node3');
 
-    ll.push(node1);
-    ll.push(node2);
-    ll.push(node3);
-    ll2.push(node1);
-    ll2.push(node3);
+    ll.push('node1');
+    ll.push('node2');
+    ll.push('node3');
+    ll2.push('node4');
+    ll2.push('node5');
 
     it('check size of list', () => {
       expect(ll.size()).to.equal(3);
@@ -166,24 +148,19 @@ describe('LinkedList', () => {
   describe('#isRound', () => {
     const ll = new LinkedList();
     const ll2 = new LinkedList();
-    let node1 = new Node('node1');
-    let node2 = new Node('node2');
-    let node3 = new Node('node3', node1);
-    let node4 = new Node('node4');
-    let node5 = new Node('node5');
 
-    ll.push(node1);
-    ll.push(node2);
-    ll.push(node3);
-    ll2.push(node4);
-    ll2.push(node5);
+    ll.push('node1');
+    ll.push('node2');
+    ll.push('node3', ll.get(0));
+    ll2.push('node4');
+    ll2.push('node5');
 
     it('check if the list is circular', () => {
-      expect(ll.isRound(ll.head)).to.equal(true);
+      expect(ll.isRound()).to.equal(true);
     });
 
     it('check if the list is circular', () => {
-      expect(ll2.isRound(ll2.head)).to.equal(false);
+      expect(ll2.isRound()).to.equal(false);
     });
   });
 

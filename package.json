@@ -4,7 +4,8 @@
   "description": "Linked list implementation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ./test/setup-mocha.js"
+    "test": "mocha -r ./test/setup-mocha.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

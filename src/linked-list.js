@@ -16,7 +16,8 @@ class LinkedList {
     return current;
   }
 
-  add(node, position) {
+  add(data, position) {
+    const node = new Node(data);
     let prev = this.get(position - 1);
     let curr = prev.next;
 
@@ -30,7 +31,8 @@ class LinkedList {
     this.length++;
   }
 
-  push(node) {
+  push(data) {
+    let node = new Node(data);
     let current = this.head;
 
     if (!this.head) {
@@ -72,9 +74,9 @@ class LinkedList {
     return this.length;
   }
 
-  isRound(head) {
-    let slower = head;
-    let faster = head.next;
+  isRound() {
+    let slower = this.head;
+    let faster = this.head.next;
 
     while(true) {
       if(!faster || !faster.next) return false;
@@ -86,6 +88,7 @@ class LinkedList {
     }
   }
 
+
   plunk(node, position) { // static ?
     let i = 0;
 
@@ -94,6 +97,20 @@ class LinkedList {
       i++;
     }
     return node;
+  }
+
+  pushNode(node) { // for deb
+    let current = this.head;
+
+    if (!this.head) {
+      this.head = node;
+    } else {
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.length++;
   }
 
 }
