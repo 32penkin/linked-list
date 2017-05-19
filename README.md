@@ -7,23 +7,20 @@
  To create a new List:
  ```sh
   const LinkedList = new LinkedList();
-  //create nodes for inserting:
-  const node1 = new Node('node 1');
-  const node2 = new Node('node 2');
-  const node3 = new Node('node 3', node1);
  ```
  You can use methods of LinkedList such as:
  * get(position) - for getting a node from position
- * push(node) - for adding new node to your List (to the its end)
- * add(node, position) - to add a node to a specific position
+ * push(data) - for adding new node to your List (to the its end)
+ * add(data, position) - to add a node to a specific position
  * remove(position) - to remove node from specific position
  Also u can use next methods: getHead(), isEmpty(), clear(), size().
 
  ```sh
-  LinkedList.push(node1);
-  LinkedList.push(node3);
-  LinkedList.add(node2, 1);
+  LinkedList.push('node1');
+  LinkedList.push('node3');
+  LinkedList.add('node2', 1);
   LinkedList.remove(1);
+  LinkedList.get(2);
  ```
 
 
@@ -34,7 +31,7 @@ npm test
 
 ### Run in node.js
 ```sh
-node index.js
+npm start
 ```
 
 ---
