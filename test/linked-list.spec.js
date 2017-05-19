@@ -93,7 +93,7 @@ describe('LinkedList', () => {
   describe('#isEmpty', () => {
     const ll = new LinkedList();
     const ll2 = new LinkedList();
-    let node1 = new Node('node1');
+    const node1 = new Node('node1');
 
     ll.push(node1);
 
