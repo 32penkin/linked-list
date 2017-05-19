@@ -6,7 +6,7 @@ const ll = new LinkedList();
 //
 // let node1 = new Node('node1');
 // let node2 = new Node('node2');
-// let node3 = new Node('node3', node1);
+// let node3 = new Node('node3', node1);                       защита
 // let node4 = new Node('node4');
 // let node5 = new Node('node5');
 //
@@ -23,11 +23,7 @@ const ll = new LinkedList();
 // console.log('-------------------------------------');
 // console.log(ll2.isRound());
 
-ll.push('node1');
-ll.push('node3');
 
-
-console.log(ll.get(1));
 
 
 
