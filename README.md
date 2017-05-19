@@ -32,31 +32,31 @@
     length: 2 }
   ```
   To push some data to a specific position:
-  ``sh
+  ```sh
   linkedList.add('node2', 1);
-  ``
+  ```
   Now linked list looks like:  
-  ``sh
+  ```sh
   LinkedList {
     head: Node { data: 'node1', next: Node { data: 'node2', next: [Object] } },
     length: 3 }
-  ``
+  ```
   To remove the node from specific position:
-  ``sh
+  ```sh
   linkedList.remove(1);
-  ``
+  ```
   Now linked list looks like:
-  ``sh
+  ```sh
    LinkedList {
       head: Node { data: 'node1', next: Node { data: 'node3', next: undefined } },
       length: 2 }
-  ``
+  ```
   To get node from position:
-  ``sh
+  ```sh
   LinkedList.get(1);
-  ``
+  ```
   This method will return the node from spec. position:
-  ``sh
+  ```sh
   Node { data: 'node3', next: undefined }
-  ``
+  ```
 ---
