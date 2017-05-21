@@ -47,8 +47,24 @@ describe('LinkedList', () => {
     it('verify the correctness of the returned node', () => {
       expect(ll.get(0).data).to.equal('node1');
       expect(ll.get(1).data).to.equal('node2');
-      expect(ll.get(-2).data).to.throw();
-      expect(ll.get('position').data).to.throw();
+    });
+
+    it('verify the correctness of position (1)', () => {
+      expect(() => {
+        ll.get(-2)
+      }).to.throw();
+    });
+
+    it('verify the correctness of position (2)', () => {
+      expect(() => {
+        ll.get('position')
+      }).to.throw();
+    });
+
+    it('verify the correctness of position (3)', () => {
+      expect(() => {
+        ll.get(10)
+      }).to.throw();
     });
   });
 
@@ -69,8 +85,24 @@ describe('LinkedList', () => {
       expect(ll.get(0).data).to.equal('node1');
       expect(ll.get(1).data).to.equal('node2');
       expect(ll.get(3).data).to.equal('node4');
-      expect(ll.get(-2).data).to.throw();
-      expect(ll.get('position').data).to.throw();
+    });
+
+    it('verify the correctness of position (1)', () => {
+      expect(() => {
+        ll.get(-2)
+      }).to.throw();
+    });
+
+    it('verify the correctness of position (2)', () => {
+      expect(() => {
+        ll.get('position')
+      }).to.throw();
+    });
+
+    it('verify the correctness of position (3)', () => {
+      expect(() => {
+        ll.get(10)
+      }).to.throw();
     });
 
     it('check the lenght of the list', () => {
@@ -95,10 +127,25 @@ describe('LinkedList', () => {
       expect(ll.get(1).data).to.equal('node3');
     });
 
-    it('verify the correctness of inserted position', () => {
-      expect(ll.remove(-1)).to.throw();
-      expect(ll.remove('position')).to.throw();
+    it('verify the correctness of position (1)', () => {
+      expect(() => {
+        ll.get(-2)
+      }).to.throw();
     });
+
+    it('verify the correctness of position (2)', () => {
+      expect(() => {
+        ll.get('position')
+      }).to.throw();
+    });
+
+    it('verify the correctness of position (3)', () => {
+      expect(() => {
+        ll.get(10)
+      }).to.throw();
+    });
+
+
   });
 
   describe('#getHead', () => {
@@ -111,10 +158,10 @@ describe('LinkedList', () => {
       expect(ll.getHead().data).to.equal('node1');
     });
 
-    it('check the head of the list is null if list become empty', () => {
+    it('check the head of the list is undefined if list become empty', () => {
       ll.remove(1);
       ll.remove(0);
-      expect(ll.getHead()).to.equal(null);
+      expect(ll.getHead()).to.equal(undefined);
     });
 
     it('check the head of the list is null if list become empty', () => {
@@ -140,12 +187,6 @@ describe('LinkedList', () => {
 
     it('check is empty the list', () => {
       ll.clear();
-      expect(ll.isEmpty()).to.equal(true);
-    });
-
-    it('check is empty the list', () => {
-      ll.remove(0);
-      ll.remove(0);
       expect(ll.isEmpty()).to.equal(true);
     });
   });
@@ -203,11 +244,6 @@ describe('LinkedList', () => {
     it('another check size of list', () => {
       ll2.clear();
       expect(ll2.size()).to.equal(0);
-    });
-
-    it('another check size of list', () => {
-      ll2.remove(1);
-      expect(ll2.size()).to.equal(1);
     });
   });
 

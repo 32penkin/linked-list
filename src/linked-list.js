@@ -9,7 +9,7 @@ class LinkedList {
   get(position) {
     let current = this.head;
 
-    if (position >= this.length) {
+    if (position >= this.length || position < 0 || typeof position !== 'number') {
       throw 'The position is outside the list!'
     }
     current = this.plunk(current, position);
@@ -17,6 +17,10 @@ class LinkedList {
   }
 
   add(data, position) {
+    if (position >= this.length || position < 0 || typeof position !== 'number') {
+      throw 'The position is outside the list!'
+    }
+
     const node = new Node(data);
     let prev = this.get(position - 1);
     let curr = prev.next;
@@ -47,14 +51,28 @@ class LinkedList {
   }
 
   remove(position) {
-    let prev = this.get(position - 1);
+    let currentNode = this.head;
+    let prev = null;
+    let i = 0;
 
-    if (position == 0) {
-      this.head = this.head.next;
-    } else {
-      prev.next = prev.next.next;
+    if (position >= this.length || position < 0 || typeof position !== 'number') {
+      throw 'The position is outside the list!'
     }
-    this.length--;
+
+    if (position === 0) {
+      this.head = currentNode.next;
+      this.length--;
+    } else {
+
+      while (i < position) {
+        prev = currentNode;
+        currentNode = currentNode.next;
+        i++;
+      }
+
+      prev.next = currentNode.next;
+      this.length--;
+    }
   }
 
   getHead() {
@@ -78,25 +96,14 @@ class LinkedList {
     let slower = this.head;
     let faster = this.head.next;
 
-    while(true) {
-      if(!faster || !faster.next) return false;
-      else if(faster == slower || faster.next == slower) return true;
+    while (true) {
+      if (!faster || !faster.next) return false;
+      else if (faster == slower || faster.next == slower) return true;
       else {
         slower = slower.next;
         faster = faster.next.next;
       }
     }
-  }
-
-
-  plunk(node, position) { // static ?
-    let i = 0;
-
-    while (i < position) {
-      node = node.next;
-      i++;
-    }
-    return node;
   }
 
   pushNode(node) { // for deb
